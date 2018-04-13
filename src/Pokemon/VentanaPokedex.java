@@ -43,9 +43,9 @@ public class VentanaPokedex extends javax.swing.JFrame {
      * Creates new form VentanaPokedex
      */
     private ImageIcon devuelveElPokemonQueEstaEnLaPosicion (int posicion){
-        int columna = posicion / 30;
-        int fila = posicion % 30;
-        return ( new ImageIcon(plantilla.getSubimage(fila*96+1, columna*96+1, 96, 96)
+        int columna = posicion / 31;
+        int fila = posicion % 31;
+        return ( new ImageIcon(plantilla.getSubimage(fila*96, columna*96, 96, 96)
                 .getScaledInstance(ancho, alto, Image.SCALE_DEFAULT))); 
     }
     
@@ -64,7 +64,9 @@ public class VentanaPokedex extends javax.swing.JFrame {
         try{
             plantilla = ImageIO.read(getClass().getResource("black-white.png"));
         }
-        catch (IOException e){}
+        catch (IOException e){
+            
+        }
    
         //conexion a la base de datos//////////////////
         try{
@@ -125,7 +127,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 41));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 230, 230));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 110, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
